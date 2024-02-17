@@ -1,0 +1,15 @@
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\net6.0\LeetCodeSolutions.exe
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\net6.0\LeetCodeSolutions.deps.json
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\net6.0\LeetCodeSolutions.runtimeconfig.json
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\net6.0\LeetCodeSolutions.dll
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\bin\Debug\net6.0\LeetCodeSolutions.pdb
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.csproj.AssemblyReference.cache
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.AssemblyInfoInputs.cache
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.AssemblyInfo.cs
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.csproj.CoreCompileInputs.cache
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.dll
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\refint\LeetCodeSolutions.dll
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.pdb
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\LeetCodeSolutions.genruntimeconfig.cache
+C:\Users\danyl\OneDrive\Робочий стіл\DeutschlandPortfolio\LeetCodeSolutions\LeetCodeSolutions\obj\Debug\net6.0\ref\LeetCodeSolutions.dll
