@@ -9,7 +9,6 @@ using System.Xml.Linq;
 namespace LeetCodeSolutions
 {
 
-
     public class ListNode
     {
         public int val;
@@ -99,13 +98,42 @@ namespace LeetCodeSolutions
             return result.next;
         }
 
+        /*9. Palindrome Number
+        Given an integer x, return true if x is a palindrome, and false otherwise.*/
+
+        static bool IsPalindrome(int x)
+        {
+            if (x == 0)
+                return true;
+
+            if (x < 0)
+                return false;
+
+            if (x % 10 == 0)
+                return false;
+
+            int digit_rev = 0;
+
+            while (x > digit_rev)
+            {
+                int pop = x % 10;
+
+                digit_rev = (digit_rev * 10) + pop;
+
+                x /= 10;
+            }
+
+            return (x == digit_rev || x == digit_rev / 10) ? true : false;
+
+        }
+
         static void ShowList(ListNode l)
         {
             ListNode newList = l;
 
             for (int i = 0; newList != null; i++)
             {
-                Console.WriteLine("Element [" + i + "]" + " = " + newList.val);
+                Console.WriteLine("Element [" + i + "]" + " = " + newList.val + "\n");
                 newList = newList.next;
             }
         }
@@ -132,6 +160,10 @@ namespace LeetCodeSolutions
             Console.WriteLine("Add Two Numbers \n");
             ShowList(res);
 
+            /* Palindrome Number */
+            int x = 12321;
+            Console.WriteLine("Palindrome Number \n");
+            Console.WriteLine("Number: " + x + " Palindrome status: "+ IsPalindrome(x) + "\n");
         }
     }
 }
