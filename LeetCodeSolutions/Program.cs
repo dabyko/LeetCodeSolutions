@@ -138,6 +138,33 @@ namespace LeetCodeSolutions
             }
         }
 
+        /*13. Roman to Integer*/
+
+        static int RomanToInt(string s)
+        {
+            var romans = new Dictionary<char, int>(){
+                {'I', 1},
+                {'V', 5},
+                {'X', 10},
+                {'L', 50},
+                {'C', 100},
+                {'D', 500},
+                {'M', 1000}
+            };
+
+            int res = 0, prevNumb = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                int curNumb = romans[s[i]];
+
+                res = curNumb <= prevNumb ? res + curNumb : res + (curNumb - (2 * prevNumb));
+
+                prevNumb = curNumb;
+            }
+
+            return res;
+        }
 
         static void Main(string[] args)
         {
@@ -164,6 +191,9 @@ namespace LeetCodeSolutions
             int x = 12321;
             Console.WriteLine("Palindrome Number \n");
             Console.WriteLine("Number: " + x + " Palindrome status: "+ IsPalindrome(x) + "\n");
+
+            /* RomanToInt */
+            Console.WriteLine("RomanToInt: " + RomanToInt("LVIII"));
         }
     }
 }
