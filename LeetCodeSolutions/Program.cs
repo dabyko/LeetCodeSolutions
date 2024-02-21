@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
 using System.Xml.Linq;
@@ -166,6 +167,48 @@ namespace LeetCodeSolutions
             return res;
         }
 
+        /*14. Longest Common Prefix*/
+
+        static string LongestCommonPrefix(string[] strs)
+        {
+            /*    
+                if (strs.Length == 0) return "";
+
+                string pref = strs[0];
+
+                for(int i = 1; i < strs.Length; i++)
+                {
+                    while(strs[i].IndexOf(pref) != 0)
+                    {
+                        pref = pref.Substring(0, pref.Length - 1);
+                    }
+                }
+
+                return pref;
+            */
+
+
+            if (strs.Length == 0) return "";
+
+            string pref = "";
+
+            for (int i = 0; i < strs[0].Length; i++)
+            {
+                for (int s = 0; s < strs.Length; s++)
+                {
+                    if (i == strs[s].Length || strs[0][i] != strs[s][i])
+                    {
+                        return pref;
+                    }
+
+                }
+
+                pref += strs[0][i];
+            }
+
+            return pref;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -194,6 +237,12 @@ namespace LeetCodeSolutions
 
             /* RomanToInt */
             Console.WriteLine("RomanToInt: " + RomanToInt("LVIII"));
+
+            /*Longest Common Prefix*/
+
+            string[] strs = new string[] { "flower", "flow", "flight" };
+
+            Console.WriteLine("Longest Common Prefix: " + LongestCommonPrefix(strs));
         }
     }
 }
