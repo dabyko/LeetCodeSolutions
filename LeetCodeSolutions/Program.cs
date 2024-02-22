@@ -209,6 +209,44 @@ namespace LeetCodeSolutions
             return pref;
         }
 
+        static bool IsValid(string s)
+        {
+            if (s.Length == 0)
+                return false;
+
+            Stack<char> brackets = new Stack<char>();
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(' || s[i] == '[' || s[i] == '{')
+                {
+                    brackets.Push(s[i]);
+                }
+                else
+                {
+                    if (brackets.Count == 0)
+                        return false;
+
+                    if (s[i] == ')' && brackets.Pop() != '(')
+                        return false;
+
+                    if (s[i] == ']' && brackets.Pop() != '[')
+                        return false;
+
+                    if (s[i] == '}' && brackets.Pop() != '{')
+                        return false;
+                }
+
+
+            }
+
+            if (brackets.Count > 0)
+                return false;
+
+
+            return true;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -243,6 +281,11 @@ namespace LeetCodeSolutions
             string[] strs = new string[] { "flower", "flow", "flight" };
 
             Console.WriteLine("Longest Common Prefix: " + LongestCommonPrefix(strs));
+
+            /*20.Valid Parentheses*/
+
+            Console.WriteLine("Valid Parentheses: " + IsValid("(]"));
+
         }
     }
 }
