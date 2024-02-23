@@ -282,6 +282,29 @@ namespace LeetCodeSolutions
             return resNode.next;
         }
 
+        static ListNode MergeTwoListsRecursive(ListNode list1, ListNode list2)
+        {
+            // Base case: if one of the lists is empty, return the other list
+            if (list1 == null) return list2;
+            if (list2 == null) return list1;
+
+            ListNode result;
+
+            // Select the smaller element in the current node
+            if (list1.val < list2.val)
+            {
+                result = new ListNode(list1.val);
+                result.next = MergeTwoListsRecursive(list1.next, list2);
+            }
+            else
+            {
+                result = new ListNode(list2.val);
+                result.next = MergeTwoListsRecursive(list1, list2.next);
+            }
+
+            return result;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -331,7 +354,7 @@ namespace LeetCodeSolutions
             ListNode subNode2_2 = new ListNode(3, subNode2_3);
             ListNode list2 = new ListNode(1, subNode2_2);
 
-            ListNode mergeList = MergeTwoLists(list1, list2);
+            ListNode mergeList = MergeTwoListsRecursive(list1, list2);
 
             Console.WriteLine("Merge Two Sorted Lists \n");
             ShowList(mergeList);
