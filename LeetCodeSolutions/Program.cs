@@ -71,7 +71,7 @@ namespace LeetCodeSolutions
             int carry = 0;
 
             while (l1 != null || l2 != null)
-            { 
+            {
                 int val_1 = (l1 != null) ? l1.val : 0;
                 int val_2 = (l2 != null) ? l2.val : 0;
 
@@ -87,7 +87,7 @@ namespace LeetCodeSolutions
                 if (l2 != null) l2 = l2.next;
 
                 head = head.next;
-            
+
             }
 
             if (carry > 0)
@@ -247,6 +247,41 @@ namespace LeetCodeSolutions
             return true;
         }
 
+        static ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        {
+
+            if (list1 == null && list2 == null)
+                return null;
+
+            ListNode resNode = new ListNode();
+
+            ListNode resPointer = resNode;
+
+            ListNode pointerL1 = list1;
+            ListNode pointerL2 = list2;
+
+            while (pointerL1 != null && pointerL2 != null)
+            {
+                if (pointerL1.val < pointerL2.val)
+                {
+                    resPointer.next = new ListNode(pointerL1.val);
+                    pointerL1 = pointerL1.next;
+                }
+                else
+                {
+                    resPointer.next = new ListNode(pointerL2.val);
+                    pointerL2 = pointerL2.next;
+                }
+
+                resPointer = resPointer.next;
+            }
+
+
+            resPointer.next = pointerL1 != null ? pointerL1 : pointerL2; 
+
+            return resNode.next;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -285,6 +320,21 @@ namespace LeetCodeSolutions
             /*20.Valid Parentheses*/
 
             Console.WriteLine("Valid Parentheses: " + IsValid("(]"));
+
+            /*21.Merge Two Sorted Lists*/
+
+            ListNode subNode1_3 = new ListNode(4);
+            ListNode subNode1_2 = new ListNode(2, subNode1_3);
+            ListNode list1 = new ListNode(1, subNode1_2);
+
+            ListNode subNode2_3 = new ListNode(4);
+            ListNode subNode2_2 = new ListNode(3, subNode2_3);
+            ListNode list2 = new ListNode(1, subNode2_2);
+
+            ListNode mergeList = MergeTwoLists(list1, list2);
+
+            Console.WriteLine("Merge Two Sorted Lists \n");
+            ShowList(mergeList);
 
         }
     }
