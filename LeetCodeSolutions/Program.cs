@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
@@ -305,6 +306,41 @@ namespace LeetCodeSolutions
             return result;
         }
 
+        /*26. Remove Duplicates from Sorted Array*/
+        static int RemoveDuplicates(int[] nums)
+        {
+           /* int k = 0;
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] != nums[k])
+                {
+                    nums[++k] = nums[i];
+                }
+            }
+            return k + 1;*/
+            if (nums.Length == 0)
+                return 0;
+
+            int currPos = 0;
+            int checkPos = 1;
+
+
+            while (checkPos < nums.Length)
+            {
+                if (nums[currPos] != nums[checkPos])
+                {
+                    currPos++;
+                    nums[currPos] = nums[checkPos];
+                }
+
+                checkPos++;                     
+            }
+
+
+            return currPos + 1;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -359,6 +395,9 @@ namespace LeetCodeSolutions
             Console.WriteLine("Merge Two Sorted Lists \n");
             ShowList(mergeList);
 
+            /*26.Remove Duplicates from Sorted Array*/
+
+            Console.WriteLine("Remove Duplicates from Sorted Array: " + RemoveDuplicates(new int[] {0,0,1,1,1,2,2,3,3,4}));
         }
     }
 }
