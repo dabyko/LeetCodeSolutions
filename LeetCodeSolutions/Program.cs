@@ -341,6 +341,28 @@ namespace LeetCodeSolutions
             return currPos + 1;
         }
 
+        /*27.Remove Element*/
+
+        static int RemoveElement(int[] nums, int val)
+        {
+
+            if (nums.Length == 0)
+                return 0;
+
+            int k = 0;
+
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != val)
+                {
+                    nums[k++] = nums[i];
+                }
+            }
+
+            return k;
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -398,6 +420,10 @@ namespace LeetCodeSolutions
             /*26.Remove Duplicates from Sorted Array*/
 
             Console.WriteLine("Remove Duplicates from Sorted Array: " + RemoveDuplicates(new int[] {0,0,1,1,1,2,2,3,3,4}));
+
+            /*27.Remove Element*/
+
+            Console.WriteLine("Remove Element from Array: " + RemoveElement(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2));
         }
     }
 }
