@@ -363,6 +363,28 @@ namespace LeetCodeSolutions
             return k;
         }
 
+
+        static int StrStr(string haystack, string needle)
+        {
+            if (haystack == null || needle == null || haystack == "")
+                return -1;
+
+            if (haystack.Equals(needle) || needle == "")
+                return 0;
+
+            char check_symbol = needle[0];
+
+            for (int i = 0; i < haystack.Length - needle.Length + 1; i++)
+            {
+                if (haystack[i] == check_symbol)
+                {
+                    if (haystack.Substring(i, needle.Length).Equals(needle))
+                        return i;
+                }
+            }
+
+            return -1;
+        }
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -424,6 +446,11 @@ namespace LeetCodeSolutions
             /*27.Remove Element*/
 
             Console.WriteLine("Remove Element from Array: " + RemoveElement(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2));
+
+            /*28.Find the Index of the First Occurrence in a String*/
+
+            Console.WriteLine("StrStr: " + StrStr("butsadkut", "sad"));
+
         }
     }
 }
