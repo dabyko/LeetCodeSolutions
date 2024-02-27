@@ -385,6 +385,41 @@ namespace LeetCodeSolutions
 
             return -1;
         }
+        static int BinSearch(int[] arr, int targetValue, int left, int right)
+        {
+            if (left > right)
+            {
+                return left;
+            }
+
+            int middle = (left + right) / 2;
+
+            int middleValue = arr[middle];
+
+            if (middleValue == targetValue)
+            {
+                return middle;
+            }
+            else
+            {
+                if (middleValue > targetValue)
+                {
+
+                    return BinSearch(arr, targetValue, left, middle - 1);
+                }
+                else
+                {
+
+                    return BinSearch(arr, targetValue, middle + 1, right);
+                }
+            }
+        }
+
+        static int SearchInsert(int[] nums, int target)
+        {
+            return BinSearch(nums, target, 0, nums.Length - 1);
+        }
+
         static void Main(string[] args)
         {
             /* Two Sum */
@@ -450,6 +485,11 @@ namespace LeetCodeSolutions
             /*28.Find the Index of the First Occurrence in a String*/
 
             Console.WriteLine("StrStr: " + StrStr("butsadkut", "sad"));
+
+            /* Search Insert Position*/
+
+
+            Console.WriteLine("Search Insert Position: " + SearchInsert(new int[] { 1, 3, 5, 6 }, 5));
 
         }
     }
