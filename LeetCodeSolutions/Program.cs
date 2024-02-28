@@ -419,6 +419,35 @@ namespace LeetCodeSolutions
         {
             return BinSearch(nums, target, 0, nums.Length - 1);
         }
+        static bool IsLatinAlphabet(char symbol)
+        {
+            return (symbol >= 'a' && symbol <= 'z') || (symbol >= 'A' && symbol <= 'Z');
+        }
+
+        /*58. Length of Last Word*/
+
+        static int LengthOfLastWord(string s)
+        {
+            if (s.Length == 0)
+                return 0;
+
+            int max_str = 0;
+
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                if (Char.IsWhiteSpace(s[i]) == true && max_str > 0)
+                {
+                    return max_str;
+                }
+                else if (Char.IsWhiteSpace(s[i]) == false)
+                {
+                    max_str++;
+                }
+            }
+
+            return max_str;
+        }
+
 
         static void Main(string[] args)
         {
@@ -490,6 +519,10 @@ namespace LeetCodeSolutions
 
 
             Console.WriteLine("Search Insert Position: " + SearchInsert(new int[] { 1, 3, 5, 6 }, 5));
+
+            /*58. Length of Last Word*/
+
+            Console.WriteLine("Length of Last Word: " + LengthOfLastWord("   Helllllo World   "));
 
         }
     }
